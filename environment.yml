@@ -1,0 +1,44 @@
+name: null
+
+channels:
+  - intel
+  - conda-forge
+  - defaults
+
+dependencies:
+  - bokeh
+  - dask
+  - dask-ml
+  - dask-labextension
+  - datashader
+  - featuretools
+  - gh
+  - git
+  - holoviews
+  - hvplot
+  - imbalanced-learn
+  - jupyterlab
+  - jupyterlab-git
+  - jupyterlab-lsp
+  - lightgbm
+  - matplotlib
+  - numba
+  - numpy
+  - optuna
+  - pandas
+  - panel
+  - pip
+  - pip:
+    - -r file:requirements.txt
+  - pyarrow
+  - python=3.7
+  - python-language-server
+  - pyviz_comms
+  - scikit-learn
+  - scipy
+  - shap
+  - umap-learn
+  - wandb
+  - xarray
+  - xeus-python
+  - xgboost
