@@ -63,7 +63,7 @@ For more details on how variable substitution works with Docker Compose, see the
 Note that you can test your `docker-compose.yml` file by running the following command in the `docker` sub-directory of the project.
 
 ```bash
-$ docker-compose config
+$ docker compose config
 ```
 
 This command takes the `docker-compose.yml` file and substitutes the values provided in the `.env` file and then returns the result.
@@ -71,7 +71,7 @@ This command takes the `docker-compose.yml` file and substitutes the values prov
 Once you are confident that values in the `.env` file are being substituted properly into the `docker-compose.yml` file, the following command can be used to bring up a container based on your project's Docker image and launch the JupyterLab server. This command should also be run from within the `docker` sub-directory of the project.
 
 ```bash
-$ docker-compose up --build
+$ docker compose up --build
 ```
 
 When you are done developing and have shutdown the JupyterLab server, the following command tears down the networking infrastructure for the running container.
