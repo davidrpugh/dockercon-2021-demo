@@ -1,21 +1,3 @@
-## Using the `kaustvl/sklearn-data-science-project` image
-
-If you are not adding any additional dependencies to your project's `environment.yml` file, then you can run containers for your project based on the `kaustvl/sklearn-data-science-project` image hosted on DockerHub. Run the following command within your project's root directory to run a container for your project based on this existing Docker image.
-
-```bash
-$ docker container run \
-  --rm \
-  --tty \
-  --volume ${pwd}/bin:/home/$USER/app/bin \
-  --volume ${pwd}/data:/home/$USER/app/data \
-  --volume ${pwd}/doc:/home/$USER/app/doc \
-  --volume ${pwd}/notebooks:/home/$USER/app/notebooks \
-  --volume ${pwd}/results:/home/$USER/app/results \
-  --volume ${pwd}/src:/home/$USER/app/src \
-  --publish 8888:8888 \
-  kaustvl/sklearn-data-science-project:latest
-```
-
 ## Building a new image for your project
 
 If you wish to add (remove) dependencies in your project's `environment.yml` (or if you wish to have a custom user defined inside the image), then you will need to build a new Docker image for you project. The following command builds a new image for your project with a custom `$USER` (with associated `$UID` and `$GID`) as well as a particular `$IMAGE_NAME` and `$IMAGE_TAG`. This command should be run within the `docker` sub-directory of the project.
