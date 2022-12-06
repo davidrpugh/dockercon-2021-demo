@@ -1,0 +1,2 @@
+# if necessary you can install any necessary extensions and then build JupyterLab 
+jupyter lab build

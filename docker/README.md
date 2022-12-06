@@ -1,21 +1,3 @@
-## Using the `kaustvl/sklearn-data-science-project` image
-
-If you are not adding any additional dependencies to your project's `environment.yml` file, then you can run containers for your project based on the `kaustvl/sklearn-data-science-project` image hosted on DockerHub. Run the following command within your project's root directory to run a container for your project based on this existing Docker image.
-
-```bash
-$ docker container run \
-  --rm \
-  --tty \
-  --volume ${pwd}/bin:/home/$USER/app/bin \
-  --volume ${pwd}/data:/home/$USER/app/data \
-  --volume ${pwd}/doc:/home/$USER/app/doc \
-  --volume ${pwd}/notebooks:/home/$USER/app/notebooks \
-  --volume ${pwd}/results:/home/$USER/app/results \
-  --volume ${pwd}/src:/home/$USER/app/src \
-  --publish 8888:8888 \
-  kaustvl/sklearn-data-science-project:latest
-```
-
 ## Building a new image for your project
 
 If you wish to add (remove) dependencies in your project's `environment.yml` (or if you wish to have a custom user defined inside the image), then you will need to build a new Docker image for you project. The following command builds a new image for your project with a custom `$USER` (with associated `$UID` and `$GID`) as well as a particular `$IMAGE_NAME` and `$IMAGE_TAG`. This command should be run within the `docker` sub-directory of the project.
@@ -81,7 +63,7 @@ For more details on how variable substitution works with Docker Compose, see the
 Note that you can test your `docker-compose.yml` file by running the following command in the `docker` sub-directory of the project.
 
 ```bash
-$ docker-compose config
+$ docker compose config
 ```
 
 This command takes the `docker-compose.yml` file and substitutes the values provided in the `.env` file and then returns the result.
@@ -89,7 +71,7 @@ This command takes the `docker-compose.yml` file and substitutes the values prov
 Once you are confident that values in the `.env` file are being substituted properly into the `docker-compose.yml` file, the following command can be used to bring up a container based on your project's Docker image and launch the JupyterLab server. This command should also be run from within the `docker` sub-directory of the project.
 
 ```bash
-$ docker-compose up --build
+$ docker compose up --build
 ```
 
 When you are done developing and have shutdown the JupyterLab server, the following command tears down the networking infrastructure for the running container.
